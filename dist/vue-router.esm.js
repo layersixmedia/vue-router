@@ -1250,6 +1250,9 @@ function addRouteRecord (
 }
 
 function compileRouteRegex (path, pathToRegexpOptions) {
+  if (pathToRegexpOptions.raw){
+    return path;
+  }
   var regex = pathToRegexp_1(path, [], pathToRegexpOptions);
   if (process.env.NODE_ENV !== 'production') {
     var keys = Object.create(null);

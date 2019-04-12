@@ -1256,6 +1256,9 @@ function addRouteRecord (
 }
 
 function compileRouteRegex (path, pathToRegexpOptions) {
+  if (pathToRegexpOptions.raw){
+    return path;
+  }
   var regex = pathToRegexp_1(path, [], pathToRegexpOptions);
   {
     var keys = Object.create(null);
