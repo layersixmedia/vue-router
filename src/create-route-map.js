@@ -152,6 +152,9 @@ function addRouteRecord (
 }
 
 function compileRouteRegex (path: string, pathToRegexpOptions: PathToRegexpOptions): RouteRegExp {
+  if (pathToRegexpOptions.raw){
+    return path;
+  }
   const regex = Regexp(path, [], pathToRegexpOptions)
   if (process.env.NODE_ENV !== 'production') {
     const keys: any = Object.create(null)
