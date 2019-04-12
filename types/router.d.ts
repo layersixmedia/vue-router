@@ -69,6 +69,7 @@ export interface PathToRegexpOptions {
   sensitive?: boolean;
   strict?: boolean;
   end?: boolean;
+  raw?: boolean;
 }
 
 export interface RouteConfig {
